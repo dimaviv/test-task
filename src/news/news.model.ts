@@ -33,7 +33,7 @@ export class News extends Model<News, TypeCreationAttrs> {
     @Column({type: DataType.DATE, allowNull: false})
     date: string;
 
-    @Column({type: DataType.INTEGER, defaultValue:0 ,allowNull: false})
+    @Column({type: DataType.INTEGER, defaultValue:0 , allowNull: true})
     likes : string;
 
     @ForeignKey(() => Category)
