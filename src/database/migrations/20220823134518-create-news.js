@@ -30,7 +30,11 @@ module.exports = {
 
       categoryId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'category',
+          key: 'id'
+        }
       }
 
     });
