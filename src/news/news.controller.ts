@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import {Controller, Get, Param} from '@nestjs/common';
+import {NewsService} from "./news.service";
 
 @Controller('news')
-export class NewsController {}
+export class NewsController {
+    constructor(private readonly newsService: NewsService) {}
+
+    @Get("/:value")
+    findByCategory(@Param("value") value: string) {
+        return this.newsService.findByCategory(value);
+    }
+}

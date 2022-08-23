@@ -1,4 +1,14 @@
-import {BelongsTo, BelongsToMany, Column, DataType, ForeignKey, HasMany, Model, Table} from "sequelize-typescript";
+import {
+    BelongsTo,
+    BelongsToMany,
+    Column,
+    DataType,
+    ForeignKey,
+    HasMany,
+    HasOne,
+    Model,
+    Table
+} from "sequelize-typescript";
 import { Category } from "../categories/categories.model";
 
 
@@ -29,6 +39,9 @@ export class News extends Model<News, TypeCreationAttrs> {
     @ForeignKey(() => Category)
     @Column({type: DataType.INTEGER, allowNull: true})
     categoryId: number;
+
+    // @HasOne(() => Category)
+    // category: Category;
 
     @BelongsTo(() => Category)
     category: Category;
