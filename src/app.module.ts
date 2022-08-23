@@ -24,8 +24,8 @@ import { NewsModule } from './news/news.module';
         CategoriesModule,
         NewsModule,
     ],
-    controllers: [NewsController],
-    providers: [NewsService],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {
 }

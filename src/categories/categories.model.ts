@@ -3,7 +3,7 @@ import {News} from "../news/news.model";
 
 interface TypeCreationAttrs {
     name: string;
-    parentId: number;
+
 }
 
 @Table({tableName: 'categories'})
@@ -15,9 +15,9 @@ export class Category extends Model<Category, TypeCreationAttrs> {
     @Column({type: DataType.STRING, allowNull: false})
     name: string;
 
-    @ForeignKey(() => Category)
-    @Column({type: DataType.INTEGER, allowNull: true})
-    parentId: number;
+    // @ForeignKey(() => Category)
+    // @Column({type: DataType.INTEGER, allowNull: true})
+    // parentId: number;
 
     @HasMany(() => News)
     news: News[];

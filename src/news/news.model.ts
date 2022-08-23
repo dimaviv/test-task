@@ -26,6 +26,10 @@ export class News extends Model<News, TypeCreationAttrs> {
     @Column({type: DataType.INTEGER, defaultValue:0 ,allowNull: false})
     likes : string;
 
+    @ForeignKey(() => Category)
+    @Column({type: DataType.INTEGER, allowNull: true})
+    categoryId: number;
+
     @BelongsTo(() => Category)
     category: Category;
 }

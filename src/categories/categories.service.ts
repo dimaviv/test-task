@@ -4,12 +4,10 @@ import {InjectModel} from "@nestjs/sequelize";
 
 @Injectable()
 export class CategoriesService {
-    constructor(@InjectModel(Category) private typeRepository: typeof Category) {}
+    constructor(@InjectModel(Category) private categoryRepository: typeof Category) {}
 
     async findAll() {
-        const categories = await this.typeRepository.findAll({
-            include: [{ model: Category, as: "categories" }],
-        });
+        const categories = await this.categoryRepository.findAll();
         return categories;
     }
 }
